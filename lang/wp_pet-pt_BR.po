@@ -1,0 +1,809 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pet Manager v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-01-31 03:27:40+0000\n"
+"Last-Translator: admin <dianakac@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#. translators: plugin header field 'Name'
+#: pet-manager.php:0
+#@ wp_pet
+msgid "Pet Manager"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: pet-manager.php:0
+#@ wp_pet
+msgid "http://dianakcury.com/dev/pet-manager"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: pet-manager.php:0
+#@ wp_pet
+msgid "Pet manager helps you keep pets for adoptions or lost pets database with special info for every pet."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: pet-manager.php:0
+#@ wp_pet
+msgid "Diana K. Cury"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: pet-manager.php:0
+#@ wp_pet
+msgid "http://dianakcury.com/"
+msgstr ""
+
+#: inc/cpt-pets.php:15
+#: pet-manager.php:161
+#: pet-manager.php:163
+#@ wp_pet
+msgid "Pets"
+msgstr ""
+
+#: inc/cpt-pets.php:20
+#@ wp_pet
+msgid "New Pet"
+msgstr ""
+
+#: inc/cpt-pets.php:126
+#: inc/extend.php:136
+#: inc/extend.php:197
+#: inc/metabox/boxes.php:92
+#@ wp_pet
+msgid "Colors"
+msgstr "Cores"
+
+#: inc/cpt-pets.php:127
+#@ wp_pet
+msgid "color"
+msgstr ""
+
+#: inc/cpt-pets.php:63
+#@ wp_pet
+msgid "status"
+msgstr ""
+
+#: inc/cpt-pets.php:145
+#@ wp_pet
+msgid "no-pet-category"
+msgstr ""
+
+#: inc/extend.php:32
+#@ wp_pet
+msgid "Pet Info"
+msgstr ""
+
+#: inc/cpt-pets.php:62
+#: inc/extend.php:41
+#: inc/extend.php:299
+#: inc/form.php:105
+#: inc/metabox/boxes.php:49
+#@ wp_pet
+msgid "Status"
+msgstr ""
+
+#: inc/extend.php:45
+#: inc/extend.php:304
+#: inc/form.php:116
+#: inc/metabox/boxes.php:43
+#: inc/widgets.php:176
+#@ wp_pet
+#@ default
+msgid "Category"
+msgstr ""
+
+#: inc/extend.php:63
+#@ wp_pet
+msgid "Picture"
+msgstr ""
+
+#: inc/extend.php:82
+#@ wp_pet
+msgid "Control #"
+msgstr ""
+
+#: inc/extend.php:133
+#: inc/extend.php:194
+#: inc/extend.php:309
+#: inc/form.php:127
+#: inc/metabox/boxes.php:56
+#: inc/widgets.php:85
+#@ wp_pet
+msgid "Gender"
+msgstr "Gênero"
+
+#: inc/extend.php:134
+#: inc/extend.php:195
+#: inc/extend.php:314
+#: inc/form.php:138
+#: inc/metabox/boxes.php:74
+#@ wp_pet
+msgid "Size"
+msgstr "Tamanho"
+
+#: inc/extend.php:135
+#: inc/extend.php:196
+#: inc/extend.php:319
+#: inc/form.php:149
+#: inc/metabox/boxes.php:62
+#@ wp_pet
+msgid "Age"
+msgstr "Idade"
+
+#: inc/extend.php:141
+#: inc/extend.php:202
+#: inc/form.php:203
+#: inc/metabox/boxes.php:98
+#@ wp_pet
+msgid "Vaccines"
+msgstr "Vacinas"
+
+#: inc/metabox/boxes.php:37
+#@ wp_pet
+msgid "Pet Profile"
+msgstr "Perfil do pet"
+
+#: inc/extend.php:142
+#: inc/extend.php:203
+#: inc/metabox/boxes.php:80
+#@ wp_pet
+msgid "Coat"
+msgstr "Pelagem"
+
+#: inc/extend.php:143
+#: inc/extend.php:204
+#: inc/form.php:192
+#: inc/metabox/boxes.php:86
+#@ wp_pet
+msgid "Pattern"
+msgstr "Padrão"
+
+#: inc/metabox/boxes.php:103
+#@ wp_pet
+msgid "Vacinated"
+msgstr "Vacinado"
+
+#: inc/form.php:205
+#: inc/metabox/boxes.php:104
+#@ wp_pet
+msgid "Dose Interval"
+msgstr "Intervalo de doses"
+
+#: inc/form.php:206
+#: inc/metabox/boxes.php:105
+#@ wp_pet
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: inc/extend.php:151
+#: inc/form.php:218
+#: inc/metabox/boxes.php:115
+#@ wp_pet
+msgid "Address"
+msgstr "Endereço"
+
+#: inc/metabox/boxes.php:169
+#@ wp_pet
+msgid "Add extra info on this pet such ID control number or fee (optional)"
+msgstr "Adicione informações extra ao pet como uma ID ou taxa (opcionais)"
+
+#: inc/metabox/boxes.php:174
+#@ wp_pet
+msgid "ID"
+msgstr ""
+
+#: inc/extend.php:144
+#: inc/extend.php:205
+#: inc/metabox/boxes.php:180
+#@ wp_pet
+msgid "Fee"
+msgstr ""
+
+#: inc/metabox/init.php:391
+#@ wp_pet
+msgid "Upload File"
+msgstr ""
+
+#: inc/metabox/init.php:400
+#@ wp_pet
+msgid "Remove Image"
+msgstr ""
+
+#: inc/metabox/init.php:407
+#@ wp_pet
+msgid "File"
+msgstr ""
+
+#: inc/metabox/init.php:407
+#@ wp_pet
+msgid "Remove File"
+msgstr ""
+
+#: inc/extend.php:224
+#@ wp_pet
+msgid "Browse Pets by Status"
+msgstr ""
+
+#: inc/extend.php:225
+#@ wp_pet
+msgid "Browse Pets by Category"
+msgstr ""
+
+#: inc/cpt-pets.php:22
+#: inc/extend.php:226
+#@ wp_pet
+msgid "Search Pets"
+msgstr ""
+
+#: inc/extend.php:137
+#: inc/extend.php:198
+#: inc/metabox/boxes.php:68
+#@ wp_pet
+msgid "Breed"
+msgstr ""
+
+#: inc/extend.php:146
+#: inc/extend.php:207
+#@ wp_pet
+msgid "Modified"
+msgstr "Modificado"
+
+#: inc/extend.php:158
+#@ wp_pet
+msgid "at"
+msgstr "às"
+
+#: inc/extend.php:182
+#@ wp_pet
+msgid "Contact about "
+msgstr ""
+
+#: inc/extend.php:251
+#@ wp_pet
+msgid "Enter pet name here"
+msgstr ""
+
+#: inc/extend.php:325
+#@ wp_pet
+msgid "Search pet"
+msgstr ""
+
+#: inc/form.php:76
+#@ wp_pet
+msgid "Quick Add"
+msgstr ""
+
+#: inc/metabox/boxes.php:38
+#@ wp_pet
+msgid "Fill the pet information here, you can add and change all info anytime."
+msgstr ""
+
+#: inc/form.php:80
+#@ wp_pet
+msgid "Pet name"
+msgstr ""
+
+#: inc/form.php:204
+#@ wp_pet
+msgid "Vaccinated"
+msgstr ""
+
+#: inc/form.php:212
+#@ wp_pet
+msgid "Pet image should be squared, 200 width x 200 height at last"
+msgstr ""
+
+#: inc/metabox/boxes.php:151
+#@ wp_pet
+msgid "Contact e-mail"
+msgstr ""
+
+#: inc/metabox/boxes.php:116
+#@ wp_pet
+msgid "Address or place reference"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: pet-manager.php:0
+#@ wp_pet
+msgid "1.0"
+msgstr ""
+
+#: inc/cpt-pets.php:16
+#@ wp_pet
+msgctxt "post type singular name"
+msgid "Pet"
+msgstr ""
+
+#: inc/cpt-pets.php:17
+#: inc/cpt-pets.php:18
+#@ wp_pet
+msgid "Add Pet"
+msgstr "Adicionar Pet"
+
+#: inc/cpt-pets.php:19
+#@ wp_pet
+msgid "Edit Pet"
+msgstr ""
+
+#: inc/cpt-pets.php:21
+#@ wp_pet
+msgid "View Pets"
+msgstr ""
+
+#: inc/cpt-pets.php:23
+#@ wp_pet
+msgid "Not Found!"
+msgstr ""
+
+#: inc/cpt-pets.php:24
+#@ wp_pet
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: inc/cpt-pets.php:72
+#@ default
+msgctxt "wp_pet"
+msgid "Gender"
+msgstr ""
+
+#: inc/cpt-pets.php:72
+#@ wp_pet
+msgid "Genders"
+msgstr "Gêneros"
+
+#: inc/cpt-pets.php:73
+#@ wp_pet
+msgid "genre"
+msgstr ""
+
+#: inc/cpt-pets.php:90
+#@ default
+msgctxt "wp_pet"
+msgid "Age"
+msgstr ""
+
+#: inc/cpt-pets.php:90
+#@ wp_pet
+msgid "Ages"
+msgstr ""
+
+#: inc/cpt-pets.php:91
+#@ wp_pet
+msgid "age"
+msgstr ""
+
+#: inc/cpt-pets.php:99
+#@ default
+msgctxt "wp_pet"
+msgid "Breeds"
+msgstr ""
+
+#: inc/cpt-pets.php:99
+#@ wp_pet
+msgid "Breeds"
+msgstr ""
+
+#: inc/cpt-pets.php:100
+#@ wp_pet
+msgid "breed"
+msgstr ""
+
+#: inc/cpt-pets.php:81
+#@ default
+msgctxt "wp_pet"
+msgid "Size"
+msgstr ""
+
+#: inc/cpt-pets.php:81
+#@ wp_pet
+msgid "Sizes"
+msgstr "Tamanhos"
+
+#: inc/cpt-pets.php:82
+#@ wp_pet
+msgid "size"
+msgstr ""
+
+#: inc/cpt-pets.php:108
+#@ default
+msgctxt "wp_pet"
+msgid "Coat"
+msgstr ""
+
+#: inc/cpt-pets.php:108
+#@ wp_pet
+msgid "Coats"
+msgstr ""
+
+#: inc/cpt-pets.php:109
+#@ wp_pet
+msgid "coat"
+msgstr ""
+
+#: inc/cpt-pets.php:117
+#@ default
+msgctxt "wp_pet"
+msgid "Pattern"
+msgstr ""
+
+#: inc/cpt-pets.php:117
+#@ wp_pet
+msgid "Patterns"
+msgstr ""
+
+#: inc/cpt-pets.php:118
+#@ wp_pet
+msgid "pattern"
+msgstr ""
+
+#: inc/cpt-pets.php:126
+#@ default
+msgctxt "wp_pet"
+msgid "Color"
+msgstr ""
+
+#: inc/cpt-pets.php:62
+#@ default
+msgctxt "wp_pet"
+msgid "Status"
+msgstr ""
+
+#: inc/extend.php:220
+#: pet-manager.php:164
+#@ wp_pet
+msgid "pet-list"
+msgstr ""
+
+#: inc/cpt-pets.php:52
+#@ default
+msgctxt "wp_pet"
+msgid "Category"
+msgstr ""
+
+#: inc/cpt-pets.php:52
+#@ wp_pet
+msgid "Categories"
+msgstr ""
+
+#: inc/cpt-pets.php:52
+#: pet_options_page.php:10
+#@ wp_pet
+msgid "Add pet category"
+msgstr "Adicionar categoria"
+
+#: inc/cpt-pets.php:53
+#@ wp_pet
+msgid "pet-category"
+msgstr ""
+
+#: inc/cpt-pets.php:62
+#: pet_options_page.php:11
+#@ wp_pet
+msgid "Add pet status"
+msgstr "Adicionar status"
+
+#: inc/cpt-pets.php:72
+#: pet_options_page.php:12
+#@ wp_pet
+msgid "Add pet gender"
+msgstr "Adicionar gênero"
+
+#: inc/cpt-pets.php:81
+#: pet_options_page.php:13
+#@ wp_pet
+msgid "Add pet size"
+msgstr "Adicionar porte"
+
+#: inc/cpt-pets.php:90
+#: pet_options_page.php:14
+#@ wp_pet
+msgid "Add pet age"
+msgstr "Adicionar idade"
+
+#: inc/cpt-pets.php:99
+#: pet_options_page.php:15
+#@ wp_pet
+msgid "Add pet breed"
+msgstr "Adicionar raça"
+
+#: inc/cpt-pets.php:108
+#: pet_options_page.php:16
+#@ wp_pet
+msgid "Add pet coat"
+msgstr "Adicionar pelagem"
+
+#: inc/cpt-pets.php:117
+#: pet_options_page.php:17
+#@ wp_pet
+msgid "Add pet pattern"
+msgstr "Adicionar padrão"
+
+#: inc/cpt-pets.php:126
+#: pet_options_page.php:18
+#@ wp_pet
+msgid "Add pet color"
+msgstr "Adicionar cor"
+
+#: inc/extend.php:145
+#: inc/extend.php:206
+#@ wp_pet
+msgid "Added"
+msgstr "Adicionado"
+
+#: inc/extend.php:182
+#@ wp_pet
+msgid "Your Name"
+msgstr ""
+
+#: inc/extend.php:182
+#@ wp_pet
+msgid "Your E-mail"
+msgstr ""
+
+#: inc/extend.php:182
+#@ wp_pet
+msgid "Your Message"
+msgstr ""
+
+#: inc/extend.php:263
+#@ wp_pet
+msgid "This post is still waiting for moderator approval. "
+msgstr ""
+
+#: inc/extend.php:263
+#@ wp_pet
+msgid "Edit this post and add more info"
+msgstr ""
+
+#: inc/extend.php:263
+#@ wp_pet
+msgid "<strong>Tip!</strong> Display a map for lost or found pets filling the Special Information section."
+msgstr ""
+
+#: inc/form.php:46
+#: inc/form.php:50
+#: inc/form.php:53
+#: inc/form.php:56
+#: inc/form.php:59
+#: inc/form.php:62
+#: inc/form.php:64
+#@ wp_pet
+msgid "* Required field"
+msgstr ""
+
+#: inc/form.php:47
+#@ wp_pet
+msgid "* Pet name must be at least 3 letters long"
+msgstr ""
+
+#: inc/form.php:77
+#@ wp_pet
+msgid "Fill the pet information here, you can add and change all info anytime. Required fields are marked *"
+msgstr ""
+
+#: inc/form.php:162
+#@ wp_pet
+msgid "Pet colors"
+msgstr ""
+
+#: inc/form.php:177
+#@ wp_pet
+msgid "Pet coat"
+msgstr ""
+
+#: inc/form.php:216
+#: inc/metabox/boxes.php:109
+#@ wp_pet
+msgid "Lost & Found Information"
+msgstr ""
+
+#: inc/form.php:217
+#: inc/metabox/boxes.php:110
+#@ wp_pet
+msgid "Add an address here to display a map if your lost or found a wondering pet."
+msgstr ""
+
+#: inc/form.php:223
+#@ default
+msgid "Submit pet"
+msgstr ""
+
+#: inc/widgets.php:8
+#@ wp_pet
+msgid "Let visitors search for pets in your site"
+msgstr ""
+
+#: inc/widgets.php:9
+#: inc/widgets.php:18
+#@ wp_pet
+msgid "Pet Search"
+msgstr ""
+
+#: inc/widgets.php:40
+#: inc/widgets.php:141
+#@ default
+msgid "Title"
+msgstr ""
+
+#: inc/widgets.php:53
+#@ wp_pet
+msgid "Pet Display"
+msgstr ""
+
+#: inc/widgets.php:53
+#@ wp_pet
+msgctxt "widget pet"
+msgid "Display pets by category or status, recent pets, etc"
+msgstr ""
+
+#: inc/widgets.php:84
+#@ wp_pet
+msgid "In"
+msgstr ""
+
+#: inc/widgets.php:87
+#@ wp_pet
+msgid "Read about"
+msgstr ""
+
+#: inc/widgets.php:146
+#@ default
+msgid "Arbitrary text or HTML"
+msgstr ""
+
+#: inc/widgets.php:151
+#@ default
+msgid "How many items would you like to display?"
+msgstr ""
+
+#: inc/widgets.php:163
+#@ default
+msgid "Sort by:"
+msgstr ""
+
+#: inc/widgets.php:165
+#@ wp_pet
+msgid "Post title"
+msgstr ""
+
+#: inc/widgets.php:166
+#@ wp_pet
+msgid "Post data"
+msgstr ""
+
+#: inc/widgets.php:167
+#@ wp_pet
+msgid "Post author"
+msgstr ""
+
+#: inc/widgets.php:168
+#@ wp_pet
+msgid "Post ID"
+msgstr ""
+
+#: inc/widgets.php:169
+#@ default
+msgid "Random"
+msgstr ""
+
+#: inc/widgets.php:170
+#@ wp_pet
+msgid "Modified date"
+msgstr ""
+
+#: inc/widgets.php:171
+#@ wp_pet
+msgid "Popularity"
+msgstr ""
+
+#: inc/widgets.php:178
+#: inc/widgets.php:190
+#@ wp_pet
+msgid "All"
+msgstr ""
+
+#: inc/widgets.php:188
+#@ wp_pet
+msgid "Pet Status"
+msgstr ""
+
+#: inc/widgets.php:202
+#@ wp_pet
+msgid "Show RSS link"
+msgstr ""
+
+#: pet-manager.php:124
+#: pet-manager.php:171
+#: pet-manager.php:173
+#@ wp_pet
+msgid "Add a pet"
+msgstr "Adicionar um pet"
+
+#: pet-manager.php:187
+#: pet_options_page.php:6
+#@ wp_pet
+msgid "Options & About"
+msgstr ""
+
+#: pet_options_page.php:7
+#@ wp_pet
+msgid "Taxonomies"
+msgstr ""
+
+#: pet_options_page.php:8
+#@ wp_pet
+msgid "Pet Manager uses taxonomies for sort pet post. Before start, add some taxonomies clicking the buttons bellow:"
+msgstr ""
+
+#: pet_options_page.php:21
+#@ wp_pet
+msgid "About Pet Manager"
+msgstr ""
+
+#: pet_options_page.php:22
+#@ wp_pet
+msgid "Pet Manager plugin was designed for small or local websites on animal adoption projects."
+msgstr ""
+
+#: pet_options_page.php:24
+#@ wp_pet
+msgid "Support & Contact"
+msgstr ""
+
+#: pet_options_page.php:25
+#@ wp_pet
+msgid "Please, keep all questions on WordPress.org forum <a href=\"mailto:dianakac@gmail.com?subject=About ADA Plugin\">e-mail</a> anytime. You can also reach me at my <a href=\"http://arquivo.tk\" _target=\"_blank\" >website</a>"
+msgstr ""
+
+#: pet_options_page.php:27
+#@ wp_pet
+msgid "If I saved you sometime, consider make a"
+msgstr ""
+
+#: pet_options_page.php:27
+#@ wp_pet
+msgid "donation."
+msgstr ""
+
+#: pet_options_page.php:30
+#@ wp_pet
+msgid "Translation"
+msgstr ""
+
+#: pet_options_page.php:31
+#@ wp_pet
+msgid "This translation to"
+msgstr ""
+
+#: pet_options_page.php:31
+#@ wp_pet
+msgid "was made by <a href=\"mailto:dianakac@gmail.com?subject=ADA Plugin Translation\">Diana K. Cury</a>"
+msgstr ""
+
+#: pet_options_page.php:33
+#@ wp_pet
+msgid "Disclaimer"
+msgstr ""
+
+#: pet_options_page.php:34
+#@ wp_pet
+msgid "Pet Manager Plugin is a free plugin but I discourage pet shops for using it and I will not provide support for such."
+msgstr ""
+
