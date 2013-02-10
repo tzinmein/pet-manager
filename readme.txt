@@ -12,7 +12,7 @@ Pet Manager is a WordPress plugin that help you to run an animal shelter website
 
 == Description ==
 
-* **Animals as posts** - every animal is kept as a post type, add a pet is like to add blog posts or pages.
+* **Pets are posts** - every animal is kept as a post type, add a pet is like to add blog posts or pages.
 * **Especial info** - add specific info for every pet such type, age, size, colors, breed etc.
 * **Frontend post** - Let users to post animals from a page in your site.
 * **Display Widget** - display pets by category, status etc anywhere on your theme.
@@ -32,7 +32,7 @@ Pet Manager is a WordPress plugin that help you to run an animal shelter website
 
 1. Install Pet Manager either via the WordPress.org plugin directory or by uploading the files to your server
 1. Go to *Pets ? Options* & About to add categories such gender, age, etc
-2. Verify the auto created pages in Pages: *Add a Pet* and *Pets* (titles can vary if you're using translastion)
+1. Verify the auto created pages in Pages: *Add a Pet* and *Pets* (titles can vary if you're using translastion)
 1. That's it.  You're ready to go!
 
 == Frequently Asked Questions ==
@@ -54,7 +54,8 @@ Also, to avoid spam, is highly recommended to use [Akismet](http://akismet.com).
 These page are auto generated to provide a place in your site to search and add pets, you can delete these pages if not wanting to use these features.
 
 == Advanced Info ==
-Custom post type: pet
+
+* **Custom post type**: `pet`
 
 * **Taxonomies**: `pet-type`, `pet-status`, `pet-color`, `pet-gender`, `pet-age`, `pet-breed`, `pet-size`, `pet-coat` and `pet-pattern`
 
