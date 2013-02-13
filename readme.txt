@@ -17,14 +17,15 @@ Pet Manager is a WordPress plugin that help you to run an animal shelter website
 * **Frontend post** - Let users to post animals from a page in your site.
 * **Display Widget** - display pets by category, status etc anywhere on your theme.
 * **Search form Widget** - a simple search form for pets.
-* **Contact form** (Jetpack or SlimJetpack is required) - Display a contact form so vistors can send an email to the post author.
+* **Contact form** - Display a contact form so vistors can send an email to the post author. [Jetpack](http://wordpress.org/extend/plugins/jetpack/) OR [SlimJetpack](http://wordpress.org/extend/plugins/slimjetpack/) is qrequired for this feature.
 * **Display Google Maps** - display a static Google Map just by provinding an address.
 * **Fully localized** - ready to display info in your language.
 * **Your own special info** - you do't need to stick to the info, e.g. you can use only the special you need such *Status*.
 
 == Screenshots ==
+
 1. A pet for adoption, single post view
-2. A Lost pet,  single post view, you can display a Google Map by providing an area or address
+2. A Lost pet, single post view, you can display a Google Map by providing an area or address
 3. Widgets displaying last added pets, pets byt type, status etc and the search form
 4. Pet post table in backend
 
