@@ -23,19 +23,19 @@ Pet Manager is a WordPress plugin that help you to run an animal shelter website
 * **Your own special info** - you do't need to stick to the info, e.g. you can use only the special you need such *Status*.
 * **Works on BuddyPress** - added BuddyPress suport so pet posts are aso listed in Activity Stream.
 
-== Screenshots ==
-
-1. A pet for adoption, single post view
-2. A Lost pet,  single post view, you can display a Google Map by providing an area or address
-3. Widgets displaying last added pets, pets byt type, status etc and the search form
-4. Pet post table in backend
-
 == Installation ==
 
 1. Install Pet Manager either via the WordPress.org plugin directory or by uploading the files to your server
 1. Go to *Pets ? Options* & About to add categories such gender, age, etc
 1. Verify the auto created pages in Pages: *Add a Pet* and *Pets* (titles can vary if you're using translastion)
 1. That's it.  You're ready to go!
+
+== Screenshots ==
+
+1. A pet for adoption, single post view
+1. A Lost pet,  single post view, you can display a Google Map by providing an area or address
+1. Widgets displaying last added pets, pets byt type, status etc and the search form
+1. Pet post table in backend
 
 == Frequently Asked Questions ==
 
