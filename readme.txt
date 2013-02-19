@@ -30,13 +30,6 @@ Pet Manager is a WordPress plugin that help you to run an animal shelter website
 1. Verify the auto created pages in Pages: *Add a Pet* and *Pets* (titles can vary if you're using translastion)
 1. That's it.  You're ready to go!
 
-== Screenshots ==
-
-1. A pet for adoption, single post view
-1. A Lost pet,  single post view, you can display a Google Map by providing an area or address
-1. Widgets displaying last added pets, pets byt type, status etc and the search form
-1. Pet post table in backend
-
 == Frequently Asked Questions ==
 
 = How to allow users to post pets? =
@@ -85,3 +78,10 @@ Custom post type: pet
 
 = 1.0 =
 * First release
+
+== Screenshots ==
+
+1. A pet for adoption, single post view
+1. A Lost pet,  single post view, you can display a Google Map by providing an area or address
+1. Widgets displaying last added pets, pets byt type, status etc and the search form
+1. Pet post table in backend
