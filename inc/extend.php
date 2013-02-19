@@ -87,7 +87,7 @@ function place_special_pet_content( $content ) {
     //print_r($petinfo); //uncomment to see all post meta in everypost
 
     $thumbnail;
-
+    $special;
 
     $special .= '<div class="pet_info pet_'.get_the_id().'" >'.
                 '<a href="'.get_permalink($post->ID).'"><figure>'.get_the_post_thumbnail($postid,'pet_img').'<figcaption><span class="icon '.$status[0]->slug.'" ></span>'.$status[0]->name.'</figcaption></figure></a>'.
@@ -134,7 +134,7 @@ function place_special_pet_content( $content ) {
 
 
      if($petinfo['_data_pet_email_option'][0]=='yes') {
-      $extrapet .= '<h3>'.__('Contact about ','wp_pet').get_the_title().'</h3>'.do_shortcode('[contact-form subject="'.get_bloginfo('title').' - '.get_the_title().'"][contact-field label="'.__('Your Name','wp_pet').'" type="name" required="1"/][contact-field label="'.__('Your E-mail','wp_pet').'" type="email" required="1"/][contact-field label="'.__('Your Message','wp_pet').'" type="textarea" required="1"/][/contact-form]');
+      $extrapet .= '<h3>'.__('Contact this pet','wp_pet').'</h3>'.do_shortcode('[contact-form subject="'.get_bloginfo('title').' - '.get_the_title().'"][contact-field label="'.__('Your Name','wp_pet').'" type="name" required="1"/][contact-field label="'.__('Your E-mail','wp_pet').'" type="email" required="1"/][contact-field label="'.__('Your Message','wp_pet').'" type="textarea" required="1"/][/contact-form]');
      }
 
 
@@ -215,6 +215,7 @@ function pet_search_form($content) {
 
      $types = get_terms('pet-category', array('hide_empty' => 1 ));
      foreach ($types as $type) {
+       $pet_types;
        $pet_types .= "<option value='$type->slug'" . selected($type->slug, true, false) . ">$type->name"."&nbsp;("."$type->count".")"."</option>";
      }
 
