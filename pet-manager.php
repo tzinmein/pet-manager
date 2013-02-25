@@ -109,7 +109,6 @@ class PET_MANAGER {
 
 
     function pet_shortcode_form($content) {
-      do_action('wp_head','pet_form');
       include('inc/form.php');
     }
 
