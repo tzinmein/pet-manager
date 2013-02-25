@@ -5,7 +5,7 @@ Text Domain: wp_pet
 Domain Path: /lang
 Plugin URI: http://dianakcury.com/dev/pet-manager
 Description: Pet Manager offers a aesy way to keep pet shelters websites
-Version: 1.1
+Version: 1.2
 Author: Diana K. Cury
 Author URI: http://dianakcury.com/
 */
@@ -155,6 +155,8 @@ class PET_MANAGER {
 
     /* Create some pages such Pets and Add a pet */
     function pet_add_pages(){
+        $pets = '';
+        $addpet= '';
 
         if( get_page_by_title(__('Pets','wp_pet')) == false )
         $pets = array(
@@ -212,6 +214,9 @@ function pet_options_page() {
 
 add_action( 'save_post', 'pet_activity_bp_log', 10, 2 );
 function pet_activity_bp_log( $post_id, $post, $user_id = false ) {
+
+if(function_exists('bp_is_active')){
+
     global $bp, $wpdb;
 
     $post_id = (int)$post_id;
@@ -237,8 +242,8 @@ function pet_activity_bp_log( $post_id, $post, $user_id = false ) {
 
         bp_blogs_record_activity( array(
                                         'user_id' => (int)$post->post_author,
-                                        'action' => apply_filters( 'bp_blogs_activity_new_post_action', $activity_action, &$post, $post_permalink ),
-                                        'content' => apply_filters( 'bp_blogs_activity_new_post_content', $activity_action.$thumb, &$post, $post_permalink ),
+                                        'action' => apply_filters( 'bp_blogs_activity_new_post_action', $activity_action, $post, $post_permalink ),
+                                        'content' => apply_filters( 'bp_blogs_activity_new_post_content', $activity_action.$thumb, $post, $post_permalink ),
                                         'primary_link' => apply_filters( 'bp_blogs_activity_new_post_primary_link', $post_permalink, $post_id ),
                                         'type' => 'new_blog_post',
                                         'item_id' => $blog_id,
@@ -250,6 +255,8 @@ function pet_activity_bp_log( $post_id, $post, $user_id = false ) {
           bp_blogs_remove_post( $post_id, $blog_id );
           bp_blogs_update_blogmeta( $blog_id, 'last_activity', bp_core_current_time() );
           do_action( 'bp_blogs_new_blog_post', $post_id, $post, $user_id );
+    }
+
 }
 
 

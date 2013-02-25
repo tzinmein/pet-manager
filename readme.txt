@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=diana
 Tags: animals, pet, pet shelters, animal shelters, BuddyPress
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,8 @@ Pet Manager is a WordPress plugin that help you to run an animal shelter website
 * **Fully localized** - ready to display info in your language.
 * **Your own special info** - you do't need to stick to the info, e.g. you can use only the special you need such *Status*.
 * **Works on BuddyPress** - added BuddyPress suport so pet posts are aso listed in Activity Stream.
+
+**Please note** though Pet Manager share some data with old ADA plugin, Pet Manager is not a update. If you need some help on migrating to this new plugin let me know in [Pet Manager Suport Forum](http://wordpress.org/support/plugin/pet-manager).
 
 == Screenshots ==
 
@@ -77,6 +79,9 @@ Custom post type: pet
 
 
 == Changelog ==
+
+= 1.2 =
+* Solved an issue with PHP 5.4
 
 = 1.1 =
 * Added BuddyPress suport
