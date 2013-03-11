@@ -78,16 +78,20 @@ class PET_Widget_Display extends WP_Widget {
 
      		  <?php  while ($q->have_posts()) : $q->the_post(); ?>
 
-          <ul class="pet_info">
+          <ul class="widget pet_info">
             <li><figure class="pet_image"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('pet_img'); ?></a></figure></li>
-            <li class="pet_name"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
-            <li><span><?php _e('In', 'wp_pet'); ?></span>: <?php echo get_the_term_list( get_the_ID(), 'pet-category' , " " ) ?></li>
-            <li><?php  $pd=get_the_ID(); $taxo = wp_get_object_terms($pd, 'pet-gender') ; echo $taxo[0]->name ; ?></li>
-            <li class="pet_btn">
-             <a href="<?php the_permalink() ?>" title="<?php _e('Read about', 'wp_pet'); ?> <?php the_title(); ?>">
-             <span class="icon <?php  $pd=get_the_ID(); $taxo = wp_get_object_terms($pd, 'pet-status') ; echo $taxo[0]->slug ; ?>"></span><?php  $pd=get_the_ID(); $taxo = wp_get_object_terms($pd, 'pet-status') ; echo $taxo[0]->name ; ?>
-             </a>
-            </li>
+            <li class="pet_name"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>         
+            <li class="pet_category"><?php $category = wp_get_object_terms(get_the_ID(), 'pet-category') ; echo '<span>'.__('In', 'wp_pet') . '</span> '. $category[0]->name ; ?></li>
+            <li class="pet_gender"><?php $gender = wp_get_object_terms(get_the_ID(), 'pet-gender') ; echo '<span>' . __('Gender', 'wp_pet') . '</span> '. $gender[0]->name ; ?></li>
+            <li class="pet_age"><?php $age = wp_get_object_terms(get_the_ID(), 'pet-age') ; echo '<span>' . __('Age', 'wp_pet') . '</span> '. $age[0]->name ; ?></li>
+            <li class="pet_size"><?php $size = wp_get_object_terms(get_the_ID(), 'pet-size') ; echo '<span>' . __('Size', 'wp_pet') . '</span> '. $size[0]->name ; ?></li>
+            
+                <li class="pet_btn">
+                 <a href="<?php the_permalink() ?>" title="<?php _e('Read about', 'wp_pet'); ?> <?php the_title(); ?>">
+                 <span class="icon <?php $status = wp_get_object_terms(get_the_ID(), 'pet-status') ; echo $status[0]->slug ; ?>"></span><?php  $pd=get_the_ID(); $taxo = wp_get_object_terms($pd, 'pet-status') ; echo $taxo[0]->name ; ?>
+                 </a>
+                </li>
+                
           </ul>
 
 
@@ -107,7 +111,7 @@ class PET_Widget_Display extends WP_Widget {
 
     /** @see WP_Widget::update */
     function update($new_instance, $old_instance) {
-    	$instance = $old_instance;
+      $instance = $old_instance;
       $instance['title'] = strip_tags($new_instance['title']);
       $instance['number'] = ($new_instance['number']);
       $instance['pet-status'] = ($new_instance['pet-status']);

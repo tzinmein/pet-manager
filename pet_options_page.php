@@ -22,16 +22,16 @@
 				<p><?php _e('Pet Manager plugin was designed for small or local websites on animal adoption projects.','wp_pet');?></p>
 
         <h3><?php _e('Support & Contact','wp_pet');?></h3>
-        <p><?php _e('Please, keep all questions on WordPress.org forum <a href="mailto:dianakac@gmail.com?subject=About ADA Plugin">e-mail</a> anytime. You can also reach me at my <a href="http://arquivo.tk" _target="_blank" >website</a>','wp_pet');?></p>
+        <p><?php _e('Please, keep all questions on WordPress.org <a href="http://wordpress.org/support/plugin/pet-manager" target="_blank">Pet Manager forum</a>. You can also reach me at my <a href="http://dianakcury.com" _target="_blank" >website</a>','wp_pet');?></p>
 
         <h3><?php _e('Translation','wp_pet');?></h3>
-        <p><?php _e('Please, submit translations in the forum.','wp_pet');?></p>
+        <p><?php _e('Please, submit translations in <a href="http://wordpress.org/support/plugin/pet-manager" target="_blank">forum</a>.','wp_pet');?></p>
 
         <h3><?php _e('Disclaimer','wp_pet');?></h3>
         <p><?php _e('Pet Manager Plugin is a free plugin but I discourage pet shops for using it and I will not provide support for such.','wp_pet');?></p>
 
         <h2><?php _e('Donate','wp_pet');?></h2>
-        <p><?php _e('<strong>Donation</strong> If I saved you sometime, consider make a donation','wp_pet');?>:</p>
+        <p><?php _e('<strong>Donate</strong> if this plugin saved you some time.','wp_pet');?>:</p>
         <div class="donate">
         <p><?php _e('US and so on','wp_pet');?> (PayPal)</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -52,7 +52,7 @@
         <form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
         <input type="hidden" name="receiverEmail" value="dianakac@gmail.com" />
         <input type="hidden" name="currency" value="BRL" />
-        <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/180x25-doar-cinza.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+        <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/180x25-doar-cinza.gif" name="submit" alt="Pague com PagSeguro - Ã© rÃ¡pido, grÃ¡tis e seguro!" />
         </form>
         </div>
 
