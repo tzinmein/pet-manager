@@ -79,7 +79,7 @@ class PET_Widget_Display extends WP_Widget {
      		  <?php  while ($q->have_posts()) : $q->the_post(); ?>
 
           <ul class="widget pet_info">
-            <li><figure class="pet_image"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('pet_img'); ?></a></figure></li>
+            <li><span class="pet_image"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('pet_img'); ?></a></span></li>
             <li class="pet_name"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>         
             <li class="pet_category"><?php $category = wp_get_object_terms(get_the_ID(), 'pet-category') ; echo '<span>'.__('In', 'wp_pet') . '</span> '. $category[0]->name ; ?></li>
             <li class="pet_gender"><?php $gender = wp_get_object_terms(get_the_ID(), 'pet-gender') ; echo '<span>' . __('Gender', 'wp_pet') . '</span> '. $gender[0]->name ; ?></li>

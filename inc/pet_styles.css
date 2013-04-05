@@ -10,19 +10,23 @@
 
 .pet_info ul li span, .pet_info span {font-size:12px;text-transform:uppercase}
 
-.pet_info figure {
-    float:left;position:relative;
+.pet_info .pet_image {
+    float:left;position:relative; display:block;
     width:150px;height:150px;margin:0 10px 0 0;
     padding:0;
 }
 
-.pet_info figure img {
+.pet_info .pet_image img {
     margin:0;padding:0px;width:100%;height:auto;
-    display:table; -webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    display:block; -webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
-.pet_info figcaption {
+.widget .pet_image{
+  width:100px;height:100px
+}
+
+.pet_info .pet_status {
     float:none;position:absolute;
     bottom:-5px;left:25%;
     background:#fff;padding:6px 10px 6px 6px;
@@ -44,19 +48,19 @@
     border-top:1px solid #fff;
 }
 
-.pet_info figcaption .icon {
+.pet_info  .pet_status .icon {
     width:16px;height:16px;
     float:left;
 
 }
 
-figcaption .adopt, .pet_btn .adopt {background:url(img/adopt.png) no-repeat}
+ .pet_status .adopt, .pet_btn .adopt {background:url(img/adopt.png) no-repeat}
 
-figcaption .adopted, .pet_btn .adopted {background:url(img/adopted.png) no-repeat}
+ .pet_status .adopted, .pet_btn .adopted {background:url(img/adopted.png) no-repeat}
 
-figcaption .lost, .pet_btn .lost {background:url(img/lost.png) no-repeat}
+ .pet_status .lost, .pet_btn .lost {background:url(img/lost.png) no-repeat}
 
-figcaption .found, .pet_btn .found {background:url(img/found.png) no-repeat}
+ .pet_status .found, .pet_btn .found {background:url(img/found.png) no-repeat}
 
 /*Map*/
 .map_image img {

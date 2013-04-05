@@ -94,7 +94,7 @@ function place_special_pet_content($content) {
     $special='';
 
     $special .= '<div class="pet_info pet_' . get_the_id() . '" >' .
-            '<a href="' . get_permalink($post->ID) . '"><figure>' . get_the_post_thumbnail($postid, 'pet_img') . '<figcaption><span class="icon ' . $status[0]->slug . '" ></span>' . $status[0]->name . '</figcaption></figure></a>' .
+            '<a href="' . get_permalink($post->ID) . '"><span class="pet_image">' . get_the_post_thumbnail($postid, 'pet_img') . '<span class="pet_status"><span class="icon ' . $status[0]->slug . '" ></span>' . $status[0]->name . '</span></span></a>' .
             '<ul>' .
             '<li class="pet_category"><span>' . __('In', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-category') . '</li>' .
             '<li class="pet_gender"><span>' . __('Gender', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-gender') . '</li>' .

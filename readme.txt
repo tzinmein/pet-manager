@@ -80,6 +80,10 @@ Custom post type: pet
 
 == Changelog ==
 
+= 1.4 =
+* Solved a CSS issue with IE
+* Solved pet submit form shortcade insert issues
+
 = 1.3 =
 * Added CSS classes to every item in pet metadata
 * Added translation (de_DE)
