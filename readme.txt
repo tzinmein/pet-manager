@@ -3,7 +3,7 @@ Contributors: Dianakc
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dianakac%40gmail%2ecom&lc=BR&item_name=Diana%20K%2e%20C&item_number=Pet%20Manager%20%2d%20A%20WordPress%20plugin%20for%20animal%20shelters&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
 Tags: animals, pet, pet shelters, animal shelters, BuddyPress
 Requires at least: 3.0
-Tested up to: 3.5
+Tested up to: 3.9
 Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
