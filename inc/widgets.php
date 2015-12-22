@@ -4,10 +4,12 @@
 // Widget for search form //
 class PET_Widget_Searchform extends WP_Widget {
 
-	function PET_Widget_Searchform() {
-		$widget_ops = array('classname' => 'PET_Widget_Searchform', 'description' => __( 'Let visitors search for pets in your site','wp_pet') );
-		$this->WP_Widget('PET_Widget_Searchform', __('Pet Search','wp_pet'), $widget_ops);
-	}
+    /** constructor */
+    function PET_Widget_Searchform() {
+        parent::__construct(false, $name = 'Pet search form','wp_pet', $widget_options = array('classname' => 'PET_Widget_Searchform','description' => __('Let visitors search for pets in your site','wp_pet')));;
+    }
+
+
 
 	function widget( $args, $instance ) {
 		extract($args);
@@ -50,13 +52,16 @@ class PET_Widget_Display extends WP_Widget {
 
     /** constructor */
     function PET_Widget_Display() {
-        parent::WP_Widget(false, $name = 'AdaPet', $widget_options = array('name' => __('Pet Display', 'wp_pet'),'description' => _x('Display pets by category or status, recent pets, etc','widget pet','wp_pet')));;
+        //parent::__construct(false, $name = __('Pet display','wp_pet'), $widget_options = array('classname' => 'PET_Widget_Display','description' => __('Display pets by category or status, recent pets, etc','widget pet','wp_pet')));;
+        parent::__construct(false, $name = __('Pet display','wp_pet'), $widget_options = array('name' => __('Pet display','wp_pet'),'description' => __('Add a Feedburner Form','fbf')));;
+
     }
+
 
     /** @see WP_Widget::widget */
     function widget($args, $instance) {
         extract( $args );
-        $title = apply_filters('widget_title', empty($instance['title']) ? '&nbsp;' : $instance['title'], $instance, $this->id_base);
+        $title = apply_filters('widget_title', $instance['title'], $instance, $this->id_base);
         $text = apply_filters( 'widget_text', $instance['text'], $instance );
         $sortby = empty( $instance['sortby'] ) ? 'comment_count' : $instance['sortby'];
         $r = $instance['rss'] ? '1' : '0';
@@ -66,29 +71,34 @@ class PET_Widget_Display extends WP_Widget {
         $q = new WP_Query(array('post_type'=>'pet', 'posts_per_page'=>$number, 'orderby'=>$sortby, 'pet-status' => $status,'pet-category' => $category));
         ?>
 
+
+         <?php if ( $r ) {
+          $rss = '<a href="'.home_url().'/?feed=rss2&amp;post_type=pet" title="RSS"><span class="ic pet_rss"></span></a>';
+         } ?>
+
+
         <?php echo $before_widget; ?>
-        <?php if ( $title ) echo $before_title . $title . $after_title; ?>
+        <?php if ( $title )  echo $before_title . $rss. $title . $after_title; ?>
 
 
          <?php echo '<div>'.$instance['filter'].'</div>' ? wpautop($text) : $text; ?>
-
-         <?php if ( $r ) {  ?>
-		     <span><a href="<?php echo home_url(); ?>/?feed=rss2&amp;post_type=pet"><span class="pet_rss">RSS</span></a></span>
-         <?php } ?>
 
      		  <?php  while ($q->have_posts()) : $q->the_post(); ?>
 
           <ul class="widget pet_info">
             <li><span class="pet_image"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('pet_img'); ?></a></span></li>
             <li class="pet_name"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>         
-            <li class="pet_category"><?php $category = wp_get_object_terms(get_the_ID(), 'pet-category') ; echo '<span>'.__('In', 'wp_pet') . '</span> '. $category[0]->name ; ?></li>
-            <li class="pet_gender"><?php $gender = wp_get_object_terms(get_the_ID(), 'pet-gender') ; echo '<span>' . __('Gender', 'wp_pet') . '</span> '. $gender[0]->name ; ?></li>
-            <li class="pet_age"><?php $age = wp_get_object_terms(get_the_ID(), 'pet-age') ; echo '<span>' . __('Age', 'wp_pet') . '</span> '. $age[0]->name ; ?></li>
-            <li class="pet_size"><?php $size = wp_get_object_terms(get_the_ID(), 'pet-size') ; echo '<span>' . __('Size', 'wp_pet') . '</span> '. $size[0]->name ; ?></li>
+
+            <li class="pet_breed"><?php $category = wp_get_object_terms(get_the_ID(), 'pet-breed') ; echo $category[0]->name ; ?></li>
+
+            <li class="pet_extra">
+              <?php $age = wp_get_object_terms(get_the_ID(), 'pet-age') ; echo '<span class="pet_age">'. $age[0]->name.'</span>, '; ?>
+              <?php $gender = wp_get_object_terms(get_the_ID(), 'pet-gender') ; echo '<span class="pet_sex">'. $gender[0]->name.'</span>'; ?>
+            </li>
             
                 <li class="pet_btn">
                  <a href="<?php the_permalink() ?>" title="<?php _e('Read about', 'wp_pet'); ?> <?php the_title(); ?>">
-                 <span class="icon <?php $status = wp_get_object_terms(get_the_ID(), 'pet-status') ; echo $status[0]->slug ; ?>"></span><?php  $pd=get_the_ID(); $taxo = wp_get_object_terms($pd, 'pet-status') ; echo $taxo[0]->name ; ?>
+                <span class="pet_status widget_tag tag-<?php $status = wp_get_object_terms(get_the_ID(), 'pet-status') ; echo $status[0]->slug ; ?>"><span class="ic ic-<?php $status = wp_get_object_terms(get_the_ID(), 'pet-status') ; echo $status[0]->slug ; ?>"></span><?php $status = wp_get_object_terms(get_the_ID(), 'pet-status') ; echo $status[0]->name ; ?></span>
                  </a>
                 </li>
                 
@@ -167,7 +177,7 @@ class PET_Widget_Display extends WP_Widget {
     			<label for="<?php echo $this->get_field_id('sortby'); ?>"><?php _e( 'Sort by:' ); ?></label>
     			<select name="<?php echo $this->get_field_name('sortby'); ?>" id="<?php echo $this->get_field_id('sortby'); ?>" class="widefat">
     				<option value="title"<?php selected( $instance['sortby'], 'title' ); ?>><?php _e('Post title','wp_pet'); ?></option>
-    				<option value="date"<?php selected( $instance['sortby'], 'date' ); ?>><?php _e('Post data','wp_pet'); ?></option>
+    				<option value="date"<?php selected( $instance['sortby'], 'date' ); ?>><?php _e('Post date','wp_pet'); ?></option>
     				<option value="author"<?php selected( $instance['sortby'], 'author' ); ?>><?php _e( 'Post author','wp_pet'); ?></option>
     				<option value="ID"<?php selected( $instance['sortby'], 'ID' ); ?>><?php _e( 'Post ID','wp_pet'); ?></option>
     				<option value="rand"<?php selected( $instance['sortby'], 'rand' ); ?>><?php _e( 'Random' ); ?></option>
@@ -210,6 +220,9 @@ class PET_Widget_Display extends WP_Widget {
 } // class PET_Widget_Display
 
 
+    //Widgets
+    add_action('widgets_init', create_function('', 'return register_widget("PET_Widget_Searchform");'));
+    add_action('widgets_init', create_function('', 'return register_widget("PET_Widget_Display");'));
 
 
 ?>

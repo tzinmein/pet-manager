@@ -5,7 +5,7 @@ Text Domain: wp_pet
 Domain Path: /lang
 Plugin URI: http://dianakcury.com/dev/pet-manager
 Description: Pet Manager offers a aesy way to keep pet shelters websites
-Version: 1.4
+Version: 1.5
 Author: Diana K. Cury
 Author URI: http://dianakcury.com/
 */
@@ -83,15 +83,14 @@ class PET_MANAGER {
 
     add_action( 'init', 'pet_remove_pets_support');
     add_action( 'admin_menu' , 'remove_taxonomies_boxes' );
+
     add_shortcode( 'pet_shortcode', 'pet_shortcode_form' );
     add_shortcode( 'pet_search', 'pet_search_form' );
+    add_shortcode('pet_list','pet_list_shortcode');
+
     add_filter('widget_text', 'do_shortcode');
 
     add_action( 'admin_print_styles','action_admin_print_styles' );
-
-    //Widgets
-    add_action('widgets_init', create_function('', 'return register_widget("PET_Widget_Searchform");'));
-    add_action('widgets_init', create_function('', 'return register_widget("PET_Widget_Display");'));
 
   }
 
@@ -194,6 +193,11 @@ add_submenu_page('edit.php?post_type=pet', __('Options & About','wp_pet'), __('O
 
 }
 
+add_action( 'wp_enqueue_scripts', 'themename_scripts' );
+function themename_scripts() {
+    wp_enqueue_style( 'themename-style', get_stylesheet_uri(), array( 'dashicons' ), '1.0' );
+}
+
 
 
 function pet_options_page() {
@@ -267,6 +271,7 @@ if(function_exists('bp_is_active')){
 
 
 $PET_MANAGER = new PET_MANAGER();
+
 
 
 ?>

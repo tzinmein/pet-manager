@@ -3,7 +3,7 @@ Contributors: Dianakc
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dianakac%40gmail%2ecom&lc=BR&item_name=Diana%20K%2e%20C&item_number=Pet%20Manager%20%2d%20A%20WordPress%20plugin%20for%20animal%20shelters&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
 Tags: animals, pet, pet shelters, animal shelters, BuddyPress
 Requires at least: 3.0
-Tested up to: 3.9
+Tested up to: 3.5
 Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Pet Manager is a WordPress plugin that help you to run an animal shelter website
 
 == Description ==
 
-* **Animals as posts** - every animal is kept as a post type, add a pet is like to add blog posts or pages.
+* **Pets are posts types** - every pet is kept as a post type, add a pet is like to add blog posts or pages.
 * **Especial info** - add specific info for every pet such type, age, size, colors, breed etc.
 * **Frontend post** - Let users to post animals from a page in your site.
 * **Display Widget** - display pets by category, status etc anywhere on your theme.
@@ -23,14 +23,9 @@ Pet Manager is a WordPress plugin that help you to run an animal shelter website
 * **Your own special info** - you do't need to stick to the info, e.g. you can use only the special you need such *Status*.
 * **Works on BuddyPress** - added BuddyPress suport so pet posts are aso listed in Activity Stream.
 
-**Please note** though Pet Manager share some data with old ADA plugin, Pet Manager is not a update. If you need some help on migrating to this new plugin let me know in [Pet Manager Suport Forum](http://wordpress.org/support/plugin/pet-manager).
 
 == Screenshots ==
 
-1. A pet for adoption, single post view
-2. A Lost pet,  single post view, you can display a Google Map by providing an area or address
-3. Widgets displaying last added pets, pets byt type, status etc and the search form
-4. Pet post table in backend
 
 == Installation ==
 
@@ -73,16 +68,21 @@ Custom post type: pet
 
 * **Taxonomies**: `pet-type`, `pet-status`, `pet-color`, `pet-gender`, `pet-age`, `pet-breed`, `pet-size`, `pet-coat` and `pet-pattern`
 
-* **Metadata**: `_data_pet_vaccines`, `_data_pet_desex`, `_data_pet_needs`, `_data_pet_address`, `_data_pet_email_option`
+* **Metadata**: `_data_pet_vaccines`, `_data_pet_desex`, `_data_pet_needs`, `_data_pet_address`, `_data_pet_email_option`, `_data_pet_id`
 
 == Upgrade Notice ==
 
 
 == Changelog ==
+= 1.5 =
+* Fixed an issue with PHP
+* CSS cleaning
+* New HTML output
+* Added new metadata: ID/Microchip
 
 = 1.4 =
-* Solved a CSS issue with IE
-* Solved pet submit form shortcade insert issues
+* Fixed a CSS issue with IE
+* Fixed pet submit form shortcade insert issues
 
 = 1.3 =
 * Added CSS classes to every item in pet metadata
@@ -90,7 +90,7 @@ Custom post type: pet
 * Minor info page editions
 
 = 1.2 =
-* Solved an issue with PHP 5.4
+* Fixed an issue with PHP 5.4
 
 = 1.1 =
 * Added BuddyPress suport

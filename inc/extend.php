@@ -17,15 +17,16 @@ function pet_right_now_content() {
 
         $text = _n($post_type->labels->singular_name, $post_type->labels->name, intval($num_posts->publish));
         if (current_user_can('edit_posts')) {
-            $num = "<a href='edit.php?post_type=$post_type->name'>$num</a>";
-            $text = "<a href='edit.php?post_type=$post_type->name'>$text</a>";
+            $text = "<a href='edit.php?post_type=$post_type->name' title='".__('View all your pet posts', 'wp_pet')."'>$text</a>";
         }
-        echo '<tr><td class="first b b-' . $post_type->name . '">' . $num . '</td>';
-        echo '<td class="t ' . $post_type->name . '">' . $text . '</td></tr>';
+
+        echo '<li>'.$num.' '.$text.'</li>';
+       // echo '<tr><td class="first b b-' . $post_type->name . '">' . $num . '</td>';
+       //  echo '<td class="t ' . $post_type->name . '">' . $text . '</td></tr>';
     }
 }
 
-add_action('right_now_content_table_end', 'pet_right_now_content');
+add_action('dashboard_glance_items', 'pet_right_now_content');
 
 
 
@@ -50,7 +51,7 @@ function pet_img_content_only($column_name, $post_ID) {
         if ($column_name == 'featured_image') {
             $post_featured_image = ST4_get_featured_image($post_ID);
             if ((!empty($post_featured_image))) {
-                echo '<div style="padding:3px;overflow:hidden;border:1px solid #ccc;width:40px;height:40px;display:block"><img style="width:100%;height:auto;" src="' . $post_featured_image . '" alt="" title="' . get_the_title() . '" /></div>';
+                echo '<div style="padding:3px;overflow:hidden;border:1px solid #ccc;width:50px;height:50px;display:block"><img style="width:100%;height:auto;" src="' . $post_featured_image . '" alt="" title="' . get_the_title() . '" /></div>';
             } else {
                 echo '';
             }
@@ -84,7 +85,7 @@ function place_special_pet_content($content) {
 
     $postid = get_the_ID();
     $status = wp_get_post_terms($postid, 'pet-status', array("fields" => "all"));
-    //$category = wp_get_post_terms($postid, 'pet-category', array("fields" => "all"));
+    $category = wp_get_post_terms($postid, 'pet-category', array("fields" => "all"));
 
     //all postmeta is here:
     $petinfo = get_post_custom(get_the_ID());
@@ -93,27 +94,48 @@ function place_special_pet_content($content) {
     //$thumbnail='';
     $special='';
 
-    $special .= '<div class="pet_info pet_' . get_the_id() . '" >' .
-            '<a href="' . get_permalink($post->ID) . '"><span class="pet_image">' . get_the_post_thumbnail($postid, 'pet_img') . '<span class="pet_status"><span class="icon ' . $status[0]->slug . '" ></span>' . $status[0]->name . '</span></span></a>' .
-            '<ul>' .
-            '<li class="pet_category"><span>' . __('In', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-category') . '</li>' .
-            '<li class="pet_gender"><span>' . __('Gender', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-gender') . '</li>' .
-            '<li class="pet_age"><span>' . __('Age', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-age') . '</li>' .
-            '<li class="pet_breed"><span>' . __('Breed', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-breed', '', ', ', '') . '</li>' .
-            '<li class="pet_size"><span>' . __('Size', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-size') . '</li>' .
-            '<li class="pet_coat"><span>' . __('Coat', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-coat', '', ', ', '') . '</li>' .
-            '<li class="pet_color"><span>' . __('Colors', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-color', '', ', ', '') . '</li>' .
-            '</ul>' .
-            '<ul>' .
-            '<li class="pet_pattern"><span>' . __('Pattern', 'wp_pet') . '</span> ' . get_the_term_list($post->ID, 'pet-pattern', '', ', ', '') . '</li>' .
-            test_if_meta($petinfo, '_data_pet_vaccines', '<li><span>' . __('Vaccines', 'wp_pet') . ':</span> ', '</li>') .
-            test_if_meta($petinfo, '_data_pet_desex', '<li><span>' . __('Desexed', 'wp_pet') . ':</span> ', '</li>') .
-            test_if_meta($petinfo, '_data_pet_needs', '<li><span>' . __('Special needs', 'wp_pet') . ':</span> ', '</li>') .
-            '<br />' .
-            '<li class="pet_meta">' . __('Added in', 'wp_pet') . ' ' . get_the_date() . '</li>' .
-            '<li class="pet_meta">' . __('Modified in', 'wp_pet') . ' ' . get_the_modified_date() . '</li>' .
-            '</ul>' .
-            '</div>';
+        $special .= 
+            '<table class="pet_manager_info pet_'.get_the_id().' category-'.$category[0]->slug.' status-'.$status[0]->slug.'">' .
+            '<tr>'.
+                '<td rowspan="6" class="pet_thumb">'.
+                '<a href="' . get_permalink($post->ID) . '"><span class="pet_image">' . get_the_post_thumbnail($postid, 'pet_img') . 
+                '<span class="pet_status tag-'.$status[0]->slug.'"><span class="ic ic-'.$status[0]->slug.'"></span>'.$status[0]->name.'</span></a>'.    
+                '</td>'.
+                '<th class="pet_category">'.__('Category', 'wp_pet').'</th>'.
+                '<td class="pet_category">'.get_the_term_list($post->ID, 'pet-category').'</td>'.
+                '<th class="pet_colors">'.__('Colors', 'wp_pet').'</th>'.
+                '<td class="pet_colors">'.get_the_term_list($post->ID, 'pet-color', '', ', ', '').'</td>'.
+            '</tr>'.
+            '<tr>'.
+                '<th class="pet_sex">'.__('Sex', 'wp_pet').'</th>'.
+                '<td class="pet_sex">'.get_the_term_list($post->ID, 'pet-gender').'</td>'.
+                '<th class="pet_pattern">'.__('Pattern', 'wp_pet').'</th>'.
+                '<td class="pet_pattern">'.get_the_term_list($post->ID, 'pet-pattern', '', ', ', '').'</td>'.
+            '</tr>'.  
+            '<tr>'.
+                '<th class="pet_age">'.__('Age', 'wp_pet').'</th>'.
+                '<td class="pet_age">'.get_the_term_list($post->ID, 'pet-age').'</td>'.
+                '<th class="pet_coat">'.__('Coat', 'wp_pet').'</th>'.
+                '<td class="pet_coat">'.get_the_term_list($post->ID, 'pet-coat', '', ', ', '').'</td>'.                
+            '</tr>'.
+            '<tr>'.
+                '<th class="pet_breed">'.__('Breed', 'wp_pet').'</th>'.
+                '<td class="pet_breed">'.get_the_term_list($post->ID, 'pet-breed', '', ', ', '').'</td>'.
+                test_if_meta($petinfo, '_data_pet_id', '<th class="pet_id">' . __('ID', 'wp_pet') . '</th><td class="pet_id">', '</td>') .
+            '</tr>'.
+            '<tr>'.
+                '<th class="pet_size">'.__('Size', 'wp_pet').'</th>'.
+                '<td class="pet_size">'.get_the_term_list($post->ID, 'pet-size').'</td>'.
+                '<td class="pet_neut" colspan="2"></td>'.   
+            '</tr>'.
+            '<tr>'.
+                '<td class="pet_extra" colspan="4">'.
+                     test_if_meta($petinfo, '_data_pet_desex', '<span class="pet_neut">', '</span>, ') .
+                     test_if_meta($petinfo, '_data_pet_vaccines', '<span class="pet_vac">', '</span>, ') .
+                     test_if_meta($petinfo, '_data_pet_needs', '<span class="pet_special">', '</span>') .
+                '</td>'.
+            '</tr>'.
+            '</table>';            
 
     if (!empty($petinfo['_data_pet_pet_address'][0])) {
         $extrapet .= '<h3>' . __('Address', 'wp_pet') . '</h3><p>' . $petinfo['_data_pet_pet_address'][0] . '</p>';
@@ -130,13 +152,22 @@ function place_special_pet_content($content) {
     };
 
     if (!empty($petinfo['_data_pet_address'][0])) {
-        $extrapet .= '<div class="map_image"><img src="http://maps.google.com/maps/api/staticmap?size=650x300&zoom=16&markers=icon:http://chart.apis.google.com/chart?chst=d_map_pin_icon%26chld=glyphish_dogpaw%257CFF6357%7C' . $petinfo['_data_pet_address'][0] . '&sensor=false" /></div>';
+        $extrapet .= '<h3>'.__('Have you seen me around this place?', 'wp_pet').'</h3><div class="map_image"><img src="http://maps.google.com/maps/api/staticmap?size=650x300&zoom=16&markers=icon:http://chart.apis.google.com/chart?chst=d_map_pin_icon%26chld=glyphish_dogpaw%257CFF6357%7C' . $petinfo['_data_pet_address'][0] . '&sensor=false" /></div>';
     };
 
 
 
     if ($petinfo['_data_pet_email_option'][0] == 'yes') {
+
+        if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'contact-form' ) ) {
         $extrapet .= '<h3>' . __('Contact about this pet', 'wp_pet') . '</h3>' . do_shortcode('[contact-form subject="' . get_bloginfo('title') . ' - ' . get_the_title() . '"][contact-field label="' . __('Your Name', 'wp_pet') . '" type="name" required="1"/][contact-field label="' . __('Your E-mail', 'wp_pet') . '" type="email" required="1"/][contact-field label="' . __('Your Message', 'wp_pet') . '" type="textarea" required="1"/][/contact-form]');
+
+        }
+        else{
+          $extrapet .= '<h3>'.__('Please, you have to install Jetpack and activate the <a href="https://jetpack.me/support/contact-form/" target="_blank">Contact Form</a> feature in order to display the form', 'wp_pet').'</h3>';
+
+        }
+
     }
 
 
@@ -171,6 +202,9 @@ function place_special_pet_content_in_pets($content) {
 }
 
 add_filter('the_content', 'place_special_pet_content_in_pets', 20);
+
+
+
 
 //print performance
 function pet_know_performance($visible = false) {
@@ -211,6 +245,19 @@ function pet_place_note($content) {
 add_filter('the_content', 'pet_place_note', 20);
 
 
+/* Shortcode Pet list */
+
+function pet_list_shortcode($content) {
+
+
+        $data .= '<h3>' . __('Browse Pets by Status', 'wp_pet') . '</h3><ul>' . wp_list_categories('echo=0&show_count=1&taxonomy=pet-status&title_li=') . '</ul>' .
+                '<h3>' . __('Browse Pets by Category', 'wp_pet') . '</h3><ul>' . wp_list_categories('echo=0&show_count=1&taxonomy=pet-category&title_li=') . '</ul>' .
+                '<h3>' . __('Search Pets', 'wp_pet') . '</h3>' . do_shortcode('[pet_search]');
+
+
+        return $content . $data;
+}    
+
 /* Shortcode Search form */
 
 function pet_search_form() {
@@ -249,7 +296,7 @@ function pet_search_form() {
             '<option value="0"></option>' .
             $pet_types .
             '</select></li>' .
-            '<li id="item-gender"><label for="pet_gender">' . __('Gender', 'wp_pet') . '</label><select id="pet_gender" name="pet-gender">' .
+            '<li id="item-gender"><label for="pet_gender">' . __('Sex', 'wp_pet') . '</label><select id="pet_gender" name="pet-gender">' .
             '<option value="0"></option>' .
             $pet_genders .
             '</select></li>' .

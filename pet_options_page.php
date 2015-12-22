@@ -7,15 +7,15 @@
         <h3><?php _e('Taxonomies','wp_pet');?></h3>
         <p><?php _e('Pet Manager uses special <a href="http://codex.wordpress.org/Taxonomies" targer="_blank">taxonomies</a> for sort pet post. Before start, add some taxonomies clicking the buttons bellow:','wp_pet');?></p>
 
-        <a class="button" href="edit-tags.php?taxonomy=pet-category&post_type=pet/"><?php _e( 'Add pet category','wp_pet');?></a>
-        <a class="button" href="edit-tags.php?taxonomy=pet-status&post_type=pet/"><?php _e( 'Add pet status','wp_pet');?></a>
-        <a class="button" href="edit-tags.php?taxonomy=pet-gender&post_type=pet/"><?php _e( 'Add pet gender','wp_pet');?></a>
-        <a class="button" href="edit-tags.php?taxonomy=pet-size&post_type=pet/"><?php _e( 'Add pet size','wp_pet');?></a>
-        <a class="button" href="edit-tags.php?taxonomy=pet-age&post_type=pet/"><?php _e( 'Add pet age','wp_pet');?></a>
-        <a class="button" href="edit-tags.php?taxonomy=pet-breed&post_type=pet/"><?php _e( 'Add pet breed','wp_pet');?></a>
-        <a class="button" href="edit-tags.php?taxonomy=pet-coat&post_type=pet/"><?php _e( 'Add pet coat','wp_pet');?></a>
-        <a class="button" href="edit-tags.php?taxonomy=pet-pattern&post_type=pet/"><?php _e( 'Add pet pattern','wp_pet');?></a>
-        <a class="button" href="edit-tags.php?taxonomy=pet-color&post_type=pet/"><?php _e( 'Add pet color','wp_pet');?></a>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-category&post_type=pet/"><?php _e( 'Add category','wp_pet');?></a></p>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-status&post_type=pet/"><?php _e( 'Add status','wp_pet');?></a></p>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-gender&post_type=pet/"><?php _e( 'Add sex','wp_pet');?></a></p>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-size&post_type=pet/"><?php _e( 'Add size','wp_pet');?></a></p>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-age&post_type=pet/"><?php _e( 'Add age','wp_pet');?></a></p>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-breed&post_type=pet/"><?php _e( 'Add breed','wp_pet');?></a></p>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-coat&post_type=pet/"><?php _e( 'Add coat','wp_pet');?></a></p>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-pattern&post_type=pet/"><?php _e( 'Add pattern','wp_pet');?></a></p>
+        <p><a class="button button-primary button-large" href="edit-tags.php?taxonomy=pet-color&post_type=pet/"><?php _e( 'Add color','wp_pet');?></a></p>
 
         <br /><br />
         <h2><?php _e('About Pet Manager','wp_pet');?></h2>

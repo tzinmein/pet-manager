@@ -54,6 +54,7 @@
                         'media_buttons' => true,
                         'textarea_rows' => 8,
                         'editor_id' => 'petdescription',
+                        'teeny' => true,
                         'tinymce' => array(
                             'theme_advanced_buttons1' => 'formatselect,underline,bold,italic,underline,forecolor,|,undo,redo,|,link,unlink,underline,wp_help',
                             'theme_advanced_buttons2' => '',
