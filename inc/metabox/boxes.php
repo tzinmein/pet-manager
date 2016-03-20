@@ -111,13 +111,13 @@ function pet_sample_metaboxes( array $meta_boxes ) {
 				),
 			),
 			array(
-				'name'    => __('Desexed','wp_pet'),
+				'name'    => __('Neutered','wp_pet'),
 				'id'      => $prefix . 'pet_desex',
 				'type'    => 'checkbox',
 				'options' => array(
 					array( 'name' => '', 'value' => '', ),
-					array( 'name' => __('Desexed','wp_pet'), 'value' => __('Desexed','wp_pet'), ),
-					array( 'name' => __('No desexed','wp_pet'), 'value' => __('No desexed','wp_pet'), ),
+					array( 'name' => __('Neutered','wp_pet'), 'value' => __('Neutered','wp_pet'), ),
+					array( 'name' => __('No neutered','wp_pet'), 'value' => __('No neutered','wp_pet'), ),
 				),
 			),
 
