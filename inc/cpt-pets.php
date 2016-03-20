@@ -159,15 +159,15 @@ function remove_taxonomies_boxes() {
       remove_meta_box( 'tagsdiv-pet-breed', 'pet', 'side' );
       remove_meta_box( 'tagsdiv-pet-age', 'pet', 'side' );
 
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-category&amp;post_type=pet' );
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-status&amp;post_type=pet' );
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-gender&amp;post_type=pet' );
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-size&amp;post_type=pet' );
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-age&amp;post_type=pet' );
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-breed&amp;post_type=pet' );
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-color&amp;post_type=pet' );
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-coat&amp;post_type=pet' );
-      remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-pattern&amp;post_type=pet' );                  
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-category&amp;post_type=pet' );
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-status&amp;post_type=pet' );
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-gender&amp;post_type=pet' );
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-size&amp;post_type=pet' );
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-age&amp;post_type=pet' );
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-breed&amp;post_type=pet' );
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-color&amp;post_type=pet' );
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-coat&amp;post_type=pet' );
+      //remove_submenu_page( 'edit.php?post_type=pet', 'edit-tags.php?taxonomy=pet-pattern&amp;post_type=pet' );                  
 
     }
 
