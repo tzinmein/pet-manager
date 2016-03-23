@@ -50,7 +50,7 @@ function create_pet_category_taxonomy()
 {
 
     $labels = array('name' => _x( 'Category','wp_pet'),'menu_name' => __( 'Categories','wp_pet'), 'add_new_item' => __( 'Add pet category','wp_pet'));
-    register_taxonomy( 'pet-category', 'pet', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'pet-category', 'public' =>FALSE, 'show_admin_column'=>TRUE,'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('pet-category','wp_pet'), 'hierarchical' => false,'with_front' => FALSE ) ) );
+    register_taxonomy( 'pet-category', 'pet', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'pet-category', 'public' =>TRUE, 'show_admin_column'=>TRUE,'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('pet-category','wp_pet'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 
 }
