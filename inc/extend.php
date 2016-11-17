@@ -91,6 +91,11 @@ function place_special_pet_content($content) {
     $petinfo = get_post_custom(get_the_ID());
     //print_r($petinfo); //uncomment to see all post meta in everypost
 
+    $neut = get_post_meta( get_the_ID(), '_data_pet_desex', true );
+    if ( !empty( $neut ) ) {
+        $netinfo = '<span class="pet_vac">'. __('Neutered','wp_pet').'</span>, ';
+    }
+
     //$thumbnail='';
     $special='';
 
@@ -130,7 +135,7 @@ function place_special_pet_content($content) {
             '</tr>'.
             '<tr>'.
                 '<td class="pet_extra" colspan="4">'.
-                     test_if_meta($petinfo, '_data_pet_desex', '<span class="pet_neut">', '</span>, ') .
+                     $netinfo.
                      test_if_meta($petinfo, '_data_pet_vaccines', '<span class="pet_vac">', '</span>, ') .
                      test_if_meta($petinfo, '_data_pet_needs', '<span class="pet_special">', '</span>') .
                 '</td>'.

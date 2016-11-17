@@ -5,7 +5,7 @@ Text Domain: wp_pet
 Domain Path: /lang
 Plugin URI: http://dianakcury.com/dev/pet-manager
 Description: Pet Manager offers a aesy way to keep pet shelters websites
-Version: 1.5
+Version: 1.6
 Author: Diana K. Cury
 Author URI: http://dianakcury.com/
 */

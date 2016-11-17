@@ -74,6 +74,9 @@ Custom post type: pet
 
 
 == Changelog ==
+= 1.6 =
+* Fixed issue when checking the "Neutered" option.
+
 = 1.5 =
 * Fixed an issue with PHP
 * CSS cleaning
