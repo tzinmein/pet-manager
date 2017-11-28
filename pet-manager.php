@@ -221,57 +221,26 @@ function pet_options_page() {
 
 /*Record pet activity in BuddyPress*/
 
-add_action( 'save_post', 'pet_activity_bp_log', 10, 2 );
-function pet_activity_bp_log( $post_id, $post, $user_id = false ) {
+add_post_type_support( 'pet', 'buddypress-activity' );
 
-if(function_exists('bp_is_active')){
-
-    global $bp, $wpdb;
-
-    $post_id = (int)$post_id;
-    $blog_id = (int)$wpdb->blogid;
-
-    if ( !$user_id )
-    $user_id = (int)$post->post_author;
-
-
-    /* Don't record this if it's not a post */
-    if ( $post->post_type != 'pet' )
-                        return false;
-
-
-    if ( 'publish' == $post->post_status && '' == $post->post_password ) {
-        if ( (int)get_blog_option( $blog_id, 'blog_public' ) || !bp_core_is_multisite() ) {
-        /* Record this in activity streams */
-        $post_permalink = get_permalink( $post_id );
-
-        $thumb = '<a href="'.get_permalink($post_id).'"><figure>'.get_the_post_thumbnail($post_id,'pet_mini').'</figure></a>';
-        $activity_action = sprintf( __( '%s added a new pet: %s', 'wp_pet' ), bp_core_get_userlink( (int)$post->post_author ), '<a href="' . $post_permalink . '">' . $post->post_title . '</a>');
-        $activity_content = $post->post_content.$thumb;
-
-        bp_blogs_record_activity( array(
-                                        'user_id' => (int)$post->post_author,
-                                        'action' => apply_filters( 'bp_blogs_activity_new_post_action', $activity_action, $post, $post_permalink ),
-                                        'content' => apply_filters( 'bp_blogs_activity_new_post_content', $activity_action.$thumb, $post, $post_permalink ),
-                                        'primary_link' => apply_filters( 'bp_blogs_activity_new_post_primary_link', $post_permalink, $post_id ),
-                                        'type' => 'new_blog_post',
-                                        'item_id' => $blog_id,
-                                        'secondary_item_id' => $post_id,
-                                        'recorded_time' => $post->post_date_gmt
-                                ));
-                        }
-        } else
-          bp_blogs_remove_post( $post_id, $blog_id );
-          bp_blogs_update_blogmeta( $blog_id, 'last_activity', bp_core_current_time() );
-          do_action( 'bp_blogs_new_blog_post', $post_id, $post, $user_id );
+function customize_pet_tracking_args() {
+    // Check if the Activity component is active before using it.
+    if ( ! bp_is_active( 'activity' ) ) {
+        return;
     }
-
+ 
+    bp_activity_set_post_type_tracking_args( 'pet', array(
+        'bp_activity_admin_filter' => __( 'Published a new pet', 'custom-domain' ),
+        'bp_activity_front_filter' => __( 'Pets', 'custom-domain' ),
+        'contexts'                 => array( 'activity', 'member' ),
+        'activity_comment'         => true,
+        'bp_activity_new_post'     => __( '%1$s added a new <a href="%2$s">pet</a>', 'custom-textdomain' ),
+        'bp_activity_new_post_ms'  => __( '%1$s added a new <a href="%2$s">pet</a>, on the site %3$s', 'custom-textdomain' ),
+        'position'                 => 100
+    ) );
 }
-
-
+add_action( 'bp_init', 'customize_pet_tracking_args' );
 
 $PET_MANAGER = new PET_MANAGER();
-
-
 
 ?>
