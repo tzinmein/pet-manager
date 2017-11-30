@@ -11,31 +11,25 @@ Author URI: https://github.com/tzinmein/
 */
 
 
-  /*Definitions*/
-		if ( !defined('WP_CONTENT_URL') )
-		    define( 'WP_CONTENT_URL', get_option('siteurl') . '/wp-content');
-		if ( !defined('WP_CONTENT_DIR') )
-		    define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
+/*Definitions*/
+if ( !defined('WP_CONTENT_URL') )
+    define( 'WP_CONTENT_URL', get_option('siteurl') . '/wp-content');
+if ( !defined('WP_CONTENT_DIR') )
+    define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 
-		if (!defined('PLUGIN_URL'))
-		    define('PLUGIN_URL', WP_CONTENT_URL . '/plugins');
-		if (!defined('PLUGIN_PATH'))
-		    define('PLUGIN_PATH', WP_CONTENT_DIR . '/plugins');
+if (!defined('PLUGIN_URL'))
+    define('PLUGIN_URL', WP_CONTENT_URL . '/plugins');
+if (!defined('PLUGIN_PATH'))
+    define('PLUGIN_PATH', WP_CONTENT_DIR . '/plugins');
 
-		define('TC_FILE_PATH', dirname(__FILE__));
-		define('TC_DIR_NAME', basename(TC_FILE_PATH));
+define('TC_FILE_PATH', dirname(__FILE__));
+define('TC_DIR_NAME', basename(TC_FILE_PATH));
 
-    //include the main class file
-    require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/cpt-pets.php';
-    require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/extend.php';
-    require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/widgets.php';
-    require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/metabox/boxes.php';
-
-    define( 'CMB_META_BOX_URL', PLUGIN_URL.'/'.TC_DIR_NAME . '/inc/metabox/' );
-
-
-
-
+//include the main class file
+require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/cpt-pets.php';
+require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/extend.php';
+require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/widgets.php';
+require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/metabox/boxes.php';
 
 class PET_MANAGER {
 	function __construct() {
